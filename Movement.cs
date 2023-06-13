@@ -80,8 +80,8 @@ public class Movement : MonoBehaviour
         if (Physics.Raycast(raycastOrigin, Vector3.down, out hit, raycastLength))
         {
 
-            if (hit.collider.CompareTag("Ground"))
-            {
+            //if (hit.collider.CompareTag("Ground"))
+            //{
 
                 float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
 
@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
 
                     targetPosition = transform.position + movementDirection * speed * Time.deltaTime;
                 }
-            }
+            //}
 
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothingFactor);
 

@@ -1,6 +1,5 @@
 using UnityEngine;
-
-public class cameraController : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform target;
     public float distance = 5.0f;
@@ -14,6 +13,7 @@ public class cameraController : MonoBehaviour
     public float maxVerticalAngle = 90.0f;
     public float minVerticalAngle = -90.0f;
     public float headOffset = 1.5f;
+    public float collisionOffset = 0.2f;
 
     private float currentZoom = 5.0f;
     private float desiredZoom = 5.0f;
@@ -31,6 +31,7 @@ public class cameraController : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(rotationY, rotationX, 0);
 
+        //telling how far behind the target the camera should be
         Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
 
         Vector3 position = rotation * negDistance + target.position;
@@ -38,11 +39,10 @@ public class cameraController : MonoBehaviour
 
         currentZoom = Mathf.Lerp(currentZoom, desiredZoom, Time.deltaTime * zoomSpeed);
 
-        position = position + Vector3.up * height;
+        position += Vector3.up * height;
 
         transform.position = position;
         transform.LookAt(target.position + Vector3.up * headOffset); // Look at head
-
 
     }
 
