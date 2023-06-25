@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class twoDimensionalAnimationController : MonoBehaviour
+public class movementAnimationController : MonoBehaviour
 {
     Animator animator;
     float velocityZ = 0.0f;

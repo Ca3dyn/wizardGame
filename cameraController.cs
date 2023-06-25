@@ -13,7 +13,6 @@ public class CameraController : MonoBehaviour
     public float maxVerticalAngle = 90.0f;
     public float minVerticalAngle = -90.0f;
     public float headOffset = 1.5f;
-    public float collisionOffset = 0.2f;
 
     private float currentZoom = 5.0f;
     private float desiredZoom = 5.0f;
